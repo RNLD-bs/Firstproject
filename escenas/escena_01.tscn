@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cfrr5gxwjso5l"]
+[gd_scene load_steps=14 format=3 uid="uid://cfrr5gxwjso5l"]
 
 [ext_resource type="PackedScene" uid="uid://83we4t347het" path="res://escenas/jugador.tscn" id="1_tb5ay"]
 [ext_resource type="Texture2D" uid="uid://coqwjig4em5br" path="res://recursos/sprites/world_tileset.png" id="2_cl35n"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bu0hpe3ixlrpw" path="res://escenas/coin.tscn" id="4_q6f33"]
 [ext_resource type="PackedScene" uid="uid://cvdkmmbkf7bd8" path="res://escenas/zona_de_muerte.tscn" id="5_e1v2x"]
 [ext_resource type="PackedScene" uid="uid://dvgnqum37csfp" path="res://escenas/enemigo.tscn" id="6_8y18n"]
+[ext_resource type="PackedScene" uid="uid://b1ctd1cpo7iag" path="res://escenas/buttons.tscn" id="7_sx708"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hyooa"]
 texture = ExtResource("2_cl35n")
@@ -315,3 +316,5 @@ libraries = {
 "": SubResource("AnimationLibrary_8kd7i")
 }
 autoplay = "movimiento"
+
+[node name="buttons" parent="." instance=ExtResource("7_sx708")]
