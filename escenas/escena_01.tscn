@@ -304,6 +304,7 @@ position = Vector2(1197, -350)
 position = Vector2(193, 48)
 
 [node name="plataformas" type="Node2D" parent="."]
+position = Vector2(-257, -114)
 
 [node name="platform" parent="plataformas" instance=ExtResource("3_m3o64")]
 position = Vector2(403, -118)

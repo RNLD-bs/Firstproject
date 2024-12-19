@@ -7,22 +7,30 @@
 [node name="buttons" type="CanvasLayer"]
 metadata/_edit_horizontal_guides_ = [508.0]
 
-[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
-position = Vector2(24, 511)
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Control"]
+position = Vector2(28, 448)
 scale = Vector2(4.5, 4.5)
 texture_normal = ExtResource("1_vj71x")
 texture_pressed = ExtResource("1_vj71x")
 action = "ui_left"
 
-[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
-position = Vector2(166, 509)
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Control"]
+position = Vector2(170, 446)
 scale = Vector2(4.5, 4.5)
 texture_normal = ExtResource("2_f4oix")
 texture_pressed = ExtResource("2_f4oix")
 action = "ui_right"
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-position = Vector2(984, 457)
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control"]
+position = Vector2(895, 394)
 scale = Vector2(4.91667, 4.45833)
 texture_normal = ExtResource("3_5diav")
 texture_pressed = ExtResource("3_5diav")
