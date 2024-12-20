@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bu0hpe3ixlrpw" path="res://escenas/coin.tscn" id="4_q6f33"]
 [ext_resource type="PackedScene" uid="uid://cvdkmmbkf7bd8" path="res://escenas/zona_de_muerte.tscn" id="5_e1v2x"]
 [ext_resource type="PackedScene" uid="uid://dvgnqum37csfp" path="res://escenas/enemigo.tscn" id="6_8y18n"]
-[ext_resource type="PackedScene" uid="uid://b1ctd1cpo7iag" path="res://escenas/buttons.tscn" id="7_sx708"]
+[ext_resource type="PackedScene" uid="uid://og7ky0givsbm" path="res://escenas/controlestactiles.tscn" id="7_amsav"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hyooa"]
 texture = ExtResource("2_cl35n")
@@ -307,7 +307,7 @@ position = Vector2(193, 48)
 position = Vector2(-257, -114)
 
 [node name="platform" parent="plataformas" instance=ExtResource("3_m3o64")]
-position = Vector2(403, -118)
+position = Vector2(733, 13)
 
 [node name="platform 2" parent="plataformas" instance=ExtResource("3_m3o64")]
 position = Vector2(544, -80)
@@ -318,4 +318,10 @@ libraries = {
 }
 autoplay = "movimiento"
 
-[node name="buttons" parent="." instance=ExtResource("7_sx708")]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="controlestactiles" parent="Control" instance=ExtResource("7_amsav")]

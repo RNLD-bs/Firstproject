@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://og7ky0givsbm"]
+
+[ext_resource type="Script" path="res://codigo/controlestactiles.gd" id="1_43s7a"]
+[ext_resource type="Texture2D" uid="uid://cdhm2g30xc3w8" path="res://recursos/bottoms/flecha_derecha.png" id="1_pbia3"]
+[ext_resource type="Texture2D" uid="uid://lv4ib75wlmfm" path="res://recursos/bottoms/flecha_izquierda.png" id="2_i5b7m"]
+[ext_resource type="Texture2D" uid="uid://cjivoqtss3gn7" path="res://recursos/bottoms/flecha_arriba.png" id="3_tw300"]
+
+[node name="controlestactiles" type="CanvasLayer"]
+script = ExtResource("1_43s7a")
+
+[node name="derecha" type="TouchScreenButton" parent="."]
+position = Vector2(263, 474)
+scale = Vector2(4.83333, 5.08333)
+texture_normal = ExtResource("1_pbia3")
+action = "ui_right"
+
+[node name="izquierda" type="TouchScreenButton" parent="."]
+position = Vector2(31, 480)
+scale = Vector2(4.91667, 4.83333)
+texture_normal = ExtResource("2_i5b7m")
+action = "ui_left"
+
+[node name="saltar" type="TouchScreenButton" parent="."]
+position = Vector2(1110, 420)
+scale = Vector2(5.75, 5.75)
+texture_normal = ExtResource("3_tw300")
+action = "ui_accept"
+
+[connection signal="pressed" from="derecha" to="." method="_on_derecha_pressed"]
+[connection signal="released" from="derecha" to="." method="_on_derecha_released"]
+[connection signal="pressed" from="izquierda" to="." method="_on_izquierda_pressed"]
+[connection signal="released" from="izquierda" to="." method="_on_izquierda_released"]
+[connection signal="pressed" from="saltar" to="." method="_on_saltar_pressed"]
+[connection signal="released" from="saltar" to="." method="_on_saltar_released"]
