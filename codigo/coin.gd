@@ -7,7 +7,7 @@ extends Area2D
 
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	gamemanager.incrementa_un_punto()
 	sonidocoin.play()
 	collision_shape.call_deferred("set", "disabled", true)
