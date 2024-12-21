@@ -9,6 +9,7 @@ extends Node
 
 func _ready() -> void:
 	coin.body_entered.connect(_on_body_entered)
+	coin.autodestruccion = false
 	
 func _on_body_entered(_body: Node2D) -> void:
 	var tween = get_tree().create_tween().bind_node(coin)
