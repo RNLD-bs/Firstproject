@@ -10,10 +10,4 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	gamemanager.incrementa_un_punto()
 	sonidocoin.play()
-	animated_sprite.visible = false
 	collision_shape.call_deferred("set", "disabled", true)
-
-
-
-func _on_sonidocoin_finished() -> void:
-	queue_free()

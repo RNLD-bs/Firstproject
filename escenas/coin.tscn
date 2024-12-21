@@ -115,5 +115,7 @@ shape = SubResource("CircleShape2D_m1efg")
 stream = ExtResource("3_7fldk")
 bus = &"Efectos de sonido"
 
+[node name="desvanicion" type="Node" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="finished" from="sonidocoin" to="." method="_on_sonidocoin_finished"]
