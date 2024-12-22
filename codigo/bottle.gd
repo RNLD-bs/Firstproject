@@ -8,7 +8,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	power.play()
 	visible = false
 	collision_shape.call_deferred("set", "disabled", true)
-	body.iniciar_efecto_correr
+	body.iniciar_efecto_correr()
 
 
 func _on_power_finished() -> void:

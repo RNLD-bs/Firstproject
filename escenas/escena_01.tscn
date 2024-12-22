@@ -460,3 +460,21 @@ position = Vector2(7, -79)
 
 [node name="bottle5" parent="botellas" instance=ExtResource("12_b6gcu")]
 position = Vector2(335, -47)
+
+[node name="bottle6" parent="botellas" instance=ExtResource("12_b6gcu")]
+position = Vector2(703, -47)
+
+[node name="bottle7" parent="botellas" instance=ExtResource("12_b6gcu")]
+position = Vector2(975, -64)
+
+[node name="bottle8" parent="botellas" instance=ExtResource("12_b6gcu")]
+position = Vector2(943, -208)
+
+[node name="bottle9" parent="botellas" instance=ExtResource("12_b6gcu")]
+position = Vector2(1054, -319)
+
+[node name="bottle10" parent="botellas" instance=ExtResource("12_b6gcu")]
+position = Vector2(1103, -223)
+
+[node name="bottle11" parent="botellas" instance=ExtResource("12_b6gcu")]
+position = Vector2(1119, -111)

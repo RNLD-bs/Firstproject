@@ -222,6 +222,3 @@ bus = &"Efectos de sonido"
 
 [node name="efecto_correr" type="Node" parent="."]
 script = ExtResource("4_rsst3")
-
-[node name="duracion" type="Timer" parent="efecto_correr"]
-one_shot = true
