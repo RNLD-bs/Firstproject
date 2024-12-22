@@ -25,3 +25,4 @@ stream = ExtResource("3_otiyc")
 bus = &"Efectos de sonido"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="power" to="." method="_on_power_finished"]

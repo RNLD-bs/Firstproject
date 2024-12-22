@@ -8,6 +8,13 @@ const JUMP_VELOCITY = -300.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var sonido_salto: AudioStreamPlayer2D = $SonidoSalto
 
+var debe_correr : bool = false
+
+signal efecto_correr
+
+func iniciar_efecto_correr() -> void:
+	efecto_correr.emit()
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -37,13 +44,13 @@ func _physics_process(delta: float) -> void:
 	
 	
 	if direction:
-		print("corre")
+	
 		
 		var velocidad_a_aplicar = SPEED
 		if Input.is_action_pressed("correr"):
 			velocidad_a_aplicar = RUN_SPEED
 		
-		velocity.x = direction * velocidad_a_aplicar
+		velocity.x = direction * (RUN_SPEED if debe_correr or Input.is_action_just_pressed("correr") else SPEED)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
