@@ -37,11 +37,13 @@ func _physics_process(delta: float) -> void:
 	
 	
 	if direction:
+		print("corre")
+		
 		var velocidad_a_aplicar = SPEED
 		if Input.is_action_pressed("correr"):
 			velocidad_a_aplicar = RUN_SPEED
 		
-		velocity.x = direction * SPEED
+		velocity.x = direction * velocidad_a_aplicar
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
