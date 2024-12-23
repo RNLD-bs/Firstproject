@@ -46,12 +46,15 @@ func _physics_process(delta: float) -> void:
 	if direction:
 	
 		
-		var velocidad_a_aplicar = SPEED
+		var _velocidad_a_aplicar = SPEED
 		if Input.is_action_pressed("correr"):
-			velocidad_a_aplicar = RUN_SPEED
+			_velocidad_a_aplicar = RUN_SPEED
 		
 		velocity.x = direction * (RUN_SPEED if debe_correr or Input.is_action_just_pressed("correr") else SPEED)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func activar_material(nuevo_material : Material) -> void:
+	animated_sprite.material = nuevo_material

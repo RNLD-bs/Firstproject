@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://83we4t347het"]
+[gd_scene load_steps=33 format=3 uid="uid://83we4t347het"]
 
 [ext_resource type="Script" path="res://codigo/jugador.gd" id="1_aoanx"]
 [ext_resource type="Texture2D" uid="uid://ctqy833xsj2cu" path="res://recursos/sprites/knight.png" id="1_jyp15"]
 [ext_resource type="AudioStream" uid="uid://bif4vro37xq7n" path="res://recursos/sounds/jump.wav" id="3_on1m6"]
 [ext_resource type="Script" path="res://codigo/efecto_correr.gd" id="4_rsst3"]
+[ext_resource type="Material" uid="uid://bfu8hrbhigm36" path="res://materiales/material power up.tres" id="5_40qj3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q4dyp"]
 atlas = ExtResource("1_jyp15")
@@ -208,9 +209,8 @@ script = ExtResource("1_aoanx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_dhi0a")
-animation = &"saltar"
+animation = &"correr"
 autoplay = "reposo"
-frame_progress = 0.771758
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
@@ -222,6 +222,7 @@ bus = &"Efectos de sonido"
 
 [node name="efecto_correr" type="Node" parent="."]
 script = ExtResource("4_rsst3")
+material_efecto = ExtResource("5_40qj3")
 
 [node name="duracion" type="Timer" parent="efecto_correr"]
 one_shot = true

@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bfu8hrbhigm36"]
+
+[ext_resource type="Shader" uid="uid://rovi8mkmu21d" path="res://shaders/shader power up.tres" id="1_faio0"]
+
+[resource]
+shader = ExtResource("1_faio0")
+shader_parameter/Color = Color(1, 0.862745, 0, 1)
+shader_parameter/velocidad = 20.0
