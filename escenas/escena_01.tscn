@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://cfrr5gxwjso5l"]
+[gd_scene load_steps=24 format=4 uid="uid://cfrr5gxwjso5l"]
 
 [ext_resource type="Script" path="res://codigo/gamemanager.gd" id="1_8avur"]
 [ext_resource type="PackedScene" uid="uid://83we4t347het" path="res://escenas/jugador.tscn" id="1_tb5ay"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bgaqbbuljtd5d" path="res://escenas/musica.tscn" id="11_nq1gy"]
 [ext_resource type="PackedScene" uid="uid://cu6j8k4nytjdn" path="res://escenas/bottle.tscn" id="12_b6gcu"]
 [ext_resource type="PackedScene" uid="uid://bayya86d33rfy" path="res://escenas/muelle.tscn" id="13_qrluf"]
+[ext_resource type="PackedScene" uid="uid://dmaw00voh358q" path="res://escenas/hud.tscn" id="14_hh5lk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hyooa"]
 texture = ExtResource("2_cl35n")
@@ -247,6 +248,9 @@ _data = {
 }
 
 [node name="escena01" type="Node2D"]
+
+[node name="HUD" parent="." instance=ExtResource("14_hh5lk")]
+visible = false
 
 [node name="gamemanager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -494,3 +498,5 @@ fuerza_impulso = 400.0
 
 [node name="muelle2" parent="muelles" instance=ExtResource("13_qrluf")]
 position = Vector2(0, 0)
+
+[connection signal="puntuacion_actualizada" from="gamemanager" to="HUD" method="_on_gamemanager_puntuacion_actualizada"]

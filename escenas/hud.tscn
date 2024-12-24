@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmaw00voh358q"]
+
+[ext_resource type="Texture2D" uid="uid://cyg12qujhnbf8" path="res://recursos/sprites/coin.png" id="1_0nxqp"]
+[ext_resource type="Script" path="res://codigo/hud.gd" id="1_edi2y"]
+[ext_resource type="FontFile" uid="uid://usyn6llu1p8m" path="res://recursos/fonts/PixelOperator8-Bold.ttf" id="2_rua02"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebqnm"]
+atlas = ExtResource("1_0nxqp")
+region = Rect2(0, 0, 16, 16)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_edi2y")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 84.0
+offset_bottom = 84.0
+texture = SubResource("AtlasTexture_ebqnm")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 85.0
+offset_top = 34.0
+offset_right = 125.0
+offset_bottom = 66.0
+theme_override_fonts/font = ExtResource("2_rua02")
+theme_override_font_sizes/font_size = 32
+text = "x"
+
+[node name="monedas" type="Label" parent="."]
+offset_left = 129.0
+offset_top = 35.0
+offset_right = 193.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("2_rua02")
+theme_override_font_sizes/font_size = 32
+text = "0"
