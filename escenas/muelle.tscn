@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://bayya86d33rfy"]
+
+[ext_resource type="Texture2D" uid="uid://kqlyw2yt5ivu" path="res://recursos/sprites/Muelle.png" id="1_8rk8i"]
+[ext_resource type="Script" path="res://codigo/muelle.gd" id="2_y6360"]
+[ext_resource type="AudioStream" uid="uid://dtxqix8xi7w4e" path="res://recursos/sounds/muelle.wav" id="3_gwgah"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky8y0"]
+atlas = ExtResource("1_8rk8i")
+region = Rect2(0, 0, 16, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtj7o"]
+atlas = ExtResource("1_8rk8i")
+region = Rect2(18, 0, 16, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u74rk"]
+atlas = ExtResource("1_8rk8i")
+region = Rect2(36, 0, 16, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0dfq"]
+atlas = ExtResource("1_8rk8i")
+region = Rect2(0, 0, 16, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rpgqb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky8y0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtj7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u74rk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtj7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky8y0")
+}],
+"loop": false,
+"name": &"activado",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0dfq")
+}],
+"loop": false,
+"name": &"desactivado",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wibmj"]
+size = Vector2(14, 4)
+
+[node name="muelle" type="AnimatedSprite2D"]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_rpgqb")
+animation = &"activado"
+frame = 4
+frame_progress = 1.0
+offset = Vector2(0, -0.5)
+script = ExtResource("2_y6360")
+fuerza_impulso = 900.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_wibmj")
+
+[node name="sonido_muelle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gwgah")
+bus = &"Efectos de sonido"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

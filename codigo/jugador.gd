@@ -58,3 +58,6 @@ func _physics_process(delta: float) -> void:
 
 func activar_material(nuevo_material : Material) -> void:
 	animated_sprite.material = nuevo_material
+
+func aplicar_impulso_hacia_arriba(cantidad_de_impulso : float) -> void:
+	velocity.y = -cantidad_de_impulso

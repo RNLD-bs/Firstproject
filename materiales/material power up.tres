@@ -5,4 +5,3 @@
 [resource]
 shader = ExtResource("1_faio0")
 shader_parameter/Color = Color(1, 0.862745, 0, 1)
-shader_parameter/velocidad = 20.0
