@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://pi1ie54gk54r"]
+
+[ext_resource type="Texture2D" uid="uid://b65dspg6y1lv2" path="res://recursos/sprites/sonic_quieto-2.png" id="1_mh07a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6il7t"]
+atlas = ExtResource("1_mh07a")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_711vj"]
+atlas = ExtResource("1_mh07a")
+region = Rect2(52, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb6r5"]
+atlas = ExtResource("1_mh07a")
+region = Rect2(104, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwx1q"]
+atlas = ExtResource("1_mh07a")
+region = Rect2(156, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_csw3i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6il7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_711vj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb6r5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwx1q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_csw3i")
+frame = 2
+frame_progress = 0.657876
